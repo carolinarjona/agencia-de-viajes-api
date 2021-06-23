@@ -11,9 +11,6 @@ const TipoDeViaje = dbAgenciaDeViajes.define("TipoDeViaje", {
   nombre: {
     type: DataTypes.STRING,
   },
-  descripcion: {
-    type: DataTypes.TEXT,
-  },
 });
 
 module.exports = TipoDeViaje;

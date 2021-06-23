@@ -20,11 +20,21 @@ const Viaje = dbAgenciaDeViajes.define("Viaje", {
   plazas: {
     type: DataTypes.INTEGER,
   },
+  precio: {
+    type: DataTypes.DECIMAL(8, 2),
+  },
   enOferta: {
     type: DataTypes.BOOLEAN,
   },
   estado: {
     type: DataTypes.INTEGER,
+  },
+  fechaSalida: {
+    type: DataTypes.DATE,
+  },
+  TipoDeViajeId: {
+    type: DataTypes.INTEGER,
+    defaultValue: 0,
   },
 });
 
