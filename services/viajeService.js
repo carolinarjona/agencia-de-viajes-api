@@ -11,6 +11,8 @@ exports.getViaje = async (id) => {
 };
 
 exports.createViaje = async (viaje) => {
+  delete viaje.id;
+
   const viajeCreated = await ViajeRepository.insertViaje(viaje);
   return viajeCreated;
 };

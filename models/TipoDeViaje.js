@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 const dbAgenciaDeViajes = require("../config/dbAgenciaDeViajes");
 
-const TipoDeViaje = dbAgenciaDeViajes.define("TipoDeViaje", {
+const TipoDeViaje = dbAgenciaDeViajes.define("tipoDeViaje", {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,

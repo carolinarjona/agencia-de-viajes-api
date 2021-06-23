@@ -11,7 +11,6 @@ exports.getTipoDeViaje = async (id) => {
 };
 
 exports.createTipoDeViaje = async (tipoDeViaje) => {
-  if (!tipoDeViaje.marca && !tipoDeViaje.modelo) throw new Error();
   await tipoDeViajeRepository.insertTipoDeViaje(tipoDeViaje);
 };
 

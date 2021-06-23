@@ -32,7 +32,7 @@ const Viaje = dbAgenciaDeViajes.define("Viaje", {
   fechaSalida: {
     type: DataTypes.DATE,
   },
-  TipoDeViajeId: {
+  tipoDeViajeId: {
     type: DataTypes.INTEGER,
     defaultValue: 0,
   },

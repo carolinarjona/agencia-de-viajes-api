@@ -15,6 +15,9 @@ var app = express();
 
 loadModels();
 
+const cors = require("cors");
+app.use(cors());
+
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -23,7 +26,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use("/tiposDeViaje", tipoDeViajesRouter);
 app.use("/viajes", viajesRouter);
-app.use("/viajes/tipoDeViajes", tipoDeViajesRouter);
 
 module.exports = app;
