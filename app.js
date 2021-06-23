@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-app.use("/tiposDeViaje", tipoDeViajesRouter);
+app.use("/viajes/tiposDeViaje", tipoDeViajesRouter);
 app.use("/viajes", viajesRouter);
 
 module.exports = app;
