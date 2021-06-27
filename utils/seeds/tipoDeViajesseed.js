@@ -1,5 +1,5 @@
 require("dotenv").config();
-const TipoDeViaje = require("../models/TipoDeViaje");
+const TipoDeViaje = require("../../models/TipoDeViaje");
 
 const tiposDeViaje = [
   {
@@ -29,5 +29,5 @@ const tiposDeViaje = [
 ];
 
 TipoDeViaje.bulkCreate(tiposDeViaje).then(() =>
-  console.log("Your tipos de viajes are loaded!")
+  console.log("✨ ¡Los TIPOS DE VIAJE se han cargado correctamente! ✨")
 );

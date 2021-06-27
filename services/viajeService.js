@@ -1,26 +1,30 @@
-const ViajeRepository = require("../repositories/ViajeRepository");
+const viajeRepository = require("../repositories/ViajeRepository");
 
 exports.getAllViajes = async () => {
-  const viajes = await ViajeRepository.findAllViajes();
+  const viajes = await viajeRepository.findAllViajes();
   return viajes;
 };
 
 exports.getViaje = async (id) => {
-  const viaje = await ViajeRepository.findViajeById(id);
+  const viaje = await viajeRepository.findViajeById(id);
   return viaje;
+};
+
+exports.search = async (filter) => {
+  return await viajeRepository.searchTravel(filter);
 };
 
 exports.createViaje = async (viaje) => {
   delete viaje.id;
 
-  const viajeCreated = await ViajeRepository.insertViaje(viaje);
+  const viajeCreated = await viajeRepository.insertViaje(viaje);
   return viajeCreated;
 };
 
 exports.editViaje = async (viajeData, id) => {
-  await ViajeRepository.editViajeById(viajeData, id);
+  await viajeRepository.editViajeById(viajeData, id);
 };
 
 exports.deleteViaje = async (id) => {
-  await ViajeRepository.deleteViajeById(id);
+  await viajeRepository.deleteViajeById(id);
 };

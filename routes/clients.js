@@ -1,34 +1,21 @@
 var express = require("express");
 var router = express.Router();
-const viajeService = require("../services/viajeService");
+const clienteService = require("../services/clienteService");
 
 router.get("/", async (req, res) => {
   try {
-    const viajes = await viajeService.getAllViajes();
-    res.status(200).json(viajes);
+    const clientes = await clienteService.getAllClientes();
+    res.status(200).json(clientes);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
 });
 
-router.get(
-  "/search:tipoDeViajeId?:nombre?:destino?",
-  async (req, res, next) => {
-    try {
-      console.log(req.query);
-      const viajes = await viajeService.search(req.query);
-      res.status(200).json(viajes);
-    } catch (error) {
-      res.status(400).json({ message: error.message });
-    }
-  }
-);
-
 router.get("/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const viaje = await viajeService.getViaje(id);
-    res.status(200).json(viaje);
+    const cliente = await clienteService.getCliente(id);
+    res.status(200).json(cliente);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
@@ -36,8 +23,8 @@ router.get("/:id", async (req, res) => {
 
 router.post("/", async (req, res) => {
   try {
-    const viaje = await viajeService.createViaje(req.body);
-    res.status(201).json(viaje);
+    await clienteService.createCliente(req.body);
+    res.status(201).json(req.body);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
@@ -46,9 +33,9 @@ router.post("/", async (req, res) => {
 router.put("/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    await viajeService.editViaje(req.body, id);
-    const viaje = await viajeService.getViaje(id);
-    res.status(200).json(viaje);
+    await clienteService.editCliente(req.body, id);
+    const cliente = await clienteService.getCliente(id);
+    res.status(200).json(cliente);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
@@ -57,7 +44,7 @@ router.put("/:id", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    await viajeService.deleteViaje(id);
+    await clienteService.deleteCliente(id);
     res.status(200).json({ deleted: true });
   } catch (error) {
     res.status(400).json({ message: error.message });

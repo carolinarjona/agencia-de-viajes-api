@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-const Viaje = require("../models/Viaje");
+const Viaje = require("../../models/Viaje");
 
 const viajes = [
   {
@@ -82,4 +82,6 @@ const viajes = [
   },
 ];
 
-Viaje.bulkCreate(viajes).then(() => console.log("Your viajes are loaded!"));
+Viaje.bulkCreate(viajes).then(() =>
+  console.log("✨ ¡Los VIAJES se han cargado correctamente! ✨")
+);

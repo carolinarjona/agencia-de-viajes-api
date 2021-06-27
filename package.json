@@ -5,8 +5,11 @@
   "scripts": {
     "start": "node ./bin/www",
     "start:dev": "nodemon ./bin/www",
-    "seed:viajes": "node ./utils/viajesSeed.js",
-    "seed:tiposDeViaje": "node ./utils/tipoDeViajesseed.js"
+    "seed:tiposDeViaje": "node ./utils/seeds/tipoDeViajesseed.js",
+    "seed:viajes": "node ./utils/seeds/viajesSeed.js",
+    "seed:estadoCivil": "node ./utils/seeds/estadoCivilSeed.js",
+    "seed:clientes": "node ./utils/seeds/clientesSeed.js",
+    "seed:usuarios": "node ./utils/seeds/usuariosSeed.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -14,6 +17,7 @@
     "debug": "~2.6.9",
     "dotenv": "^10.0.0",
     "express": "~4.16.1",
+    "jsonwebtoken": "^8.5.1",
     "morgan": "~1.9.1",
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.2"
