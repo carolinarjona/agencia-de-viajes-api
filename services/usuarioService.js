@@ -26,10 +26,18 @@ exports.login = async (email, password) => {
   const token = generateToken({
     id: user.id,
     email: user.email,
-    role: user.role,
-    name: user.name,
+    rol: user.rol,
   });
-  return token;
+
+  const result = {
+    token: token,
+    id: user.id,
+    email: user.email,
+    rol: user.rol,
+    nombre: user.nombre,
+  };
+
+  return result;
 };
 
 exports.getAllProfiles = async () => {

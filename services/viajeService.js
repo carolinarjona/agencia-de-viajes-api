@@ -5,6 +5,16 @@ exports.getAllViajes = async () => {
   return viajes;
 };
 
+exports.getPagination = async (pagination) => {
+  const { page = 3, pageSize = 0, sort } = pagination;
+
+  return await viajeRepository.pagination({
+    page: +page,
+    pageSize: +pageSize,
+    sort,
+  });
+};
+
 exports.getViaje = async (id) => {
   const viaje = await viajeRepository.findViajeById(id);
   return viaje;

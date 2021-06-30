@@ -7,7 +7,7 @@ router.get("/", async (req, res) => {
     const tiposDeViaje = await tipoDeViajeService.getAllTipoDeViaje();
     res.status(200).json(tiposDeViaje);
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.status(401).json({ message: error.message });
   }
 });
 
@@ -17,7 +17,7 @@ router.get("/:id", async (req, res) => {
     const tipoDeViaje = await tipoDeViajeService.getTipoDeViaje(id);
     res.status(200).json(tipoDeViaje);
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.status(401).json({ message: error.message });
   }
 });
 
@@ -26,7 +26,7 @@ router.post("/", async (req, res) => {
     await tipoDeViajeService.createTipoDeViaje(req.body);
     res.status(201).json(req.body);
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.status(401).json({ message: error.message });
   }
 });
 
@@ -37,7 +37,7 @@ router.put("/:id", async (req, res) => {
     const tipoDeViaje = await tipoDeViajeService.getTipoDeViaje(id);
     res.status(200).json(tipoDeViaje);
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.status(401).json({ message: error.message });
   }
 });
 
@@ -47,7 +47,7 @@ router.delete("/:id", async (req, res) => {
     await tipoDeViajeService.deleteTipoDeViaje(id);
     res.sendStatus(204);
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.status(401).json({ message: error.message });
   }
 });
 

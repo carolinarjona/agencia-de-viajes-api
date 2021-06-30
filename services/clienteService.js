@@ -5,6 +5,16 @@ exports.getAllClientes = async () => {
   return clientes;
 };
 
+exports.getPagination = async (pagination) => {
+  const { page = 3, pageSize = 0, sort } = pagination;
+
+  return await clienteRepository.pagination({
+    page: +page,
+    pageSize: +pageSize,
+    sort,
+  });
+};
+
 exports.getCliente = async (id) => {
   const cliente = await clienteRepository.findClienteById(id);
   return cliente;
