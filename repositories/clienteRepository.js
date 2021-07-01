@@ -53,6 +53,6 @@ exports.deleteCliente = async (id) => {
   return await Cliente.destroy({ where: { id } });
 };
 
-exports.updateCliente = async (id, clienteDetails) => {
+exports.updateCliente = async (clienteDetails, id) => {
   return await Cliente.update(clienteDetails, { where: { id } });
 };

@@ -27,7 +27,7 @@ exports.createCliente = async (cliente) => {
 };
 
 exports.editCliente = async (clienteData, id) => {
-  await clienteRepository.editCliente(clienteData, id);
+  await clienteRepository.updateCliente(clienteData, id);
 };
 
 exports.deleteCliente = async (id) => {
